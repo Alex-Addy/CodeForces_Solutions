@@ -4,11 +4,18 @@ use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 use std::str::FromStr;
+use std::collections::{VecDeque, HashMap};
 
 fn main() {
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
+    let stdin = io::stdin();
+    let mut input = stdin.lock();
+    let mut line = String::new();
+    input.read_line(&mut line).unwrap();
 }
+
+/*
+ * Utility Functions
+ */
 
 // get numbers from line seperated by spaces
 fn get_numbers<T>(line: &str) -> Vec<T>
